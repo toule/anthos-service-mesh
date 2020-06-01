@@ -75,7 +75,7 @@ kubectl auth can-i '*' '*' --all-namespaces
 
 ### 서비스 계정
 
-#### 등록 (서비스 당 최소 권한 원칙)
+#### 등록 (서비스 당 최소 권한 원칙) - 가지고 있는 SA를 활용해도 무관
 
 ```bash
 export SERVICE_ACCOUNT=service-mesh-sa
@@ -365,4 +365,28 @@ kubectl port-forward svc/tracing -n istio-system 8080:80
 ![topology](./images/topology.png)
 
 ![traffic](./images/slo.png)
+
+
+
+## 인프라 삭제
+
+### Anthos Serivce Mesh 삭제
+
+```bash
+istioctl manifest generate --set profile=asm | kubectl delete -f -
+```
+
+### GKE 삭제
+
+```bash
+gcloud container clusters delete ${CLUSTER_NAME} --zone=${CLUSTER_ZONE}
+```
+
+### GKE Hub에서 클러스터 삭제
+
+- 등록 취소 (Console)
+
+```bash
+kubectl delete membership <membership_name>
+```
 
