@@ -32,7 +32,7 @@ gcloud services enable container.googleapis.com compute.googleapis.com monitorin
 ### ENV 설정
 
 ```bash
-export VPC_NAME="multi-vpc"
+export VPC_NAME="<MY-VPC>"
 export PROJECT_ID=$(gcloud config get-value project)
 export PROJECT_NUMBER=$(gcloud projects describe ${PROJECT_ID} --format="value(projectNumber)") 
 export CLUSTER_NAME=gcp-cluster
