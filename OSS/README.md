@@ -160,7 +160,7 @@ curl -I http://${INGRESS_HOST}/productpage
 
 - JMETER로 부하테스트 구성
 
-### ![jemter2](/Users/ray/Documents/Test/Container/Anthos/service-mesh/images/jemter2.png)
+### ![jemter2](../images/jemter2.png)
 
 ### Prometheus
 
